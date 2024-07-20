@@ -7,6 +7,7 @@ function App() {
   const [numberAllowed, setNumberAllowed] = useState(false);
   const [charAllowed, setCharAllowed] = useState(false);
   const [password, setPassword] = useState("");
+  
 
   // useRef hook
   const passwordRef = useRef(null);
@@ -37,8 +38,9 @@ function App() {
    },[password])
 
   useEffect(() => {
-    passwordGenerator()
-  },[length, numberAllowed, charAllowed, passwordGenerator])
+    passwordGenerator();
+  },[length, numberAllowed, charAllowed, passwordGenerator]);
+
   return (
     <>
       <div className='w-full max-w-md mx-auto shadow-md rounded-lg px-4 py-3 my-8 text-orange-500 bg-gray-800'>
@@ -67,7 +69,7 @@ function App() {
             min={6}
             max={100}
             value={length}
-            className=''cursor-pointer
+            className='cursor-pointer'
             onChange={(e) => {
               setLength(e.target.value)
             }}/>
